@@ -2037,12 +2037,17 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "card-body"
   }, [_c("h3", {
-    staticClass: "card-title m-3"
+    staticClass: "card-title m-3 font-weight-bold"
   }, [_vm._v("\n            " + _vm._s(_vm.post.title) + "\n        ")]), _vm._v(" "), _c("h6", {
-    staticClass: "card-subtitle m-3"
-  }, [_vm._v("\n            " + _vm._s(_vm.post.user.name) + "\n        ")]), _vm._v(" "), _c("p", {
+    staticClass: "card-subtitle m-3 text-secondary"
+  }, [_vm._v("\n            " + _vm._s(_vm.post.user.name) + " | " + _vm._s(_vm.post.post_date) + "\n        ")]), _vm._v(" "), _c("p", {
     staticClass: "card-text m-3"
-  }, [_vm._v("\n            " + _vm._s(_vm.post.post_content) + "\n        ")])])]);
+  }, [_vm._v("\n            " + _vm._s(_vm.post.post_content) + "\n        ")]), _vm._v(" "), _c("img", {
+    attrs: {
+      src: _vm.post.post_image,
+      alt: "image"
+    }
+  })])]);
 };
 
 var staticRenderFns = [];
