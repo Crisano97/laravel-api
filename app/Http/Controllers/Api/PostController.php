@@ -15,7 +15,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::with('category')->get();
         return response()->json([
             'response' => true,
             'count' => count($posts),
@@ -58,7 +58,7 @@ class PostController extends Controller
         //     'results' =>['data' => $post]
         // ]);
 
-        $post = Post::find($id);
+        $post = Post::with('category')->find($id);
         if ($post) {
             return response()->json([
                 'response' => true,
