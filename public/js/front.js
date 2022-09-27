@@ -1912,9 +1912,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      posts: []
+    };
+  },
   methods: {
     getPosts: function getPosts() {
-      console.warn('hello world');
+      var _this = this;
+
+      var postPage = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/posts/', {
+        page: postPage
+      }).then(function (response) {
+        console.log(response.data.results.data);
+        _this.posts = response.data.results.data;
+      })["catch"](function (error) {
+        console.error(error.message);
+      });
     }
   },
   created: function created() {
@@ -1939,15 +1954,14 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _vm._m(0);
+  return _c("div", [_c("ul", _vm._l(_vm.posts, function (post) {
+    return _c("li", {
+      key: post.id
+    }, [_vm._v("\n            " + _vm._s(post.title) + "\n        ")]);
+  }), 0)]);
 };
 
-var staticRenderFns = [function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", [_c("ul", [_c("li")])]);
-}];
+var staticRenderFns = [];
 render._withStripped = true;
 
 

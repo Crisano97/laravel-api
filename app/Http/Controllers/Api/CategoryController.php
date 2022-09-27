@@ -19,7 +19,7 @@ class CategoryController extends Controller
         return response()->json([
             'results' => true,
             // 'count' => count($categories),
-            'results' => ['data' => $categories]
+            'results' => $categories
         ]);
     }
 
@@ -56,7 +56,7 @@ class CategoryController extends Controller
         if ($category) {
             return response()->json([
                 'response' => true,
-                'results' =>['data' => $category]
+                'results' => $category
             ]);
         }
         else return response('', 404);
