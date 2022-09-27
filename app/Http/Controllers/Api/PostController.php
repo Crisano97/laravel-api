@@ -59,10 +59,12 @@ class PostController extends Controller
         // ]);
 
         $post = Post::find($id);
-        if ($post) return response()->json([
-            'response' => true,
-            'results' =>['data' => $post]
-        ]);
+        if ($post) {
+            return response()->json([
+                'response' => true,
+                'results' =>['data' => $post]
+            ]);
+        }
         else return response('', 404);
     }
 
@@ -97,6 +99,7 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Post::destroy($id);
+        return response('', 204);
     }
 }
