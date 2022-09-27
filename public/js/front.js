@@ -2033,8 +2033,16 @@ var render = function render() {
       _c = _vm._self._c;
 
   return _c("div", {
-    staticClass: "card"
-  }, [_c("ul", [_c("li", [_vm._v("\n            " + _vm._s(_vm.post.title) + " | " + _vm._s(_vm.post.user.name) + " | " + _vm._s(_vm.post.post_date) + "\n        ")])])]);
+    staticClass: "card p-4 m-4"
+  }, [_c("div", {
+    staticClass: "card-body"
+  }, [_c("h3", {
+    staticClass: "card-title m-3"
+  }, [_vm._v("\n            " + _vm._s(_vm.post.title) + "\n        ")]), _vm._v(" "), _c("h6", {
+    staticClass: "card-subtitle m-3"
+  }, [_vm._v("\n            " + _vm._s(_vm.post.user.name) + "\n        ")]), _vm._v(" "), _c("p", {
+    staticClass: "card-text m-3"
+  }, [_vm._v("\n            " + _vm._s(_vm.post.post_content) + "\n        ")])])]);
 };
 
 var staticRenderFns = [];
