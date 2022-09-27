@@ -15,10 +15,10 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::with('posts')->get();
+        $categories = Category::with('posts')->paginate(3);
         return response()->json([
             'results' => true,
-            'count' => count($categories),
+            // 'count' => count($categories),
             'results' => ['data' => $categories]
         ]);
     }
