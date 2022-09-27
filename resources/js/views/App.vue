@@ -1,37 +1,16 @@
 <template>
     <div>
-        <ul>
-            <li v-for="post in posts" :key="post.id">
-                {{ post.title }} | {{ post.user.name }} | {{ post.post_date }}
-            </li>
-        </ul>
+        <MainComponent />
     </div>
 </template>
 
 <script>
-import axios from 'axios';
+import MainComponent from '../components/Main.vue'
 export default {
-    data: function(){
-        return{
-            posts: [],
-        }
+    components: {
+        MainComponent,
     },
-    methods: {
-        getPosts(postPage = 1){
-            axios.get('/api/posts/', {
-                page: postPage
-            }).then((response) =>{
-                console.log(response.data.results.data);
-                this.posts = response.data.results.data;
-            }).catch((error) =>{
-                console.error(error.message);
-            })
-        }
-    },
-
-    created(){
-        this.getPosts();
-    }
+    
 }
 </script>
 
