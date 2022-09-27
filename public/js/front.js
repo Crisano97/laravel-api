@@ -1957,7 +1957,7 @@ var render = function render() {
   return _c("div", [_c("ul", _vm._l(_vm.posts, function (post) {
     return _c("li", {
       key: post.id
-    }, [_vm._v("\n            " + _vm._s(post.title) + "\n        ")]);
+    }, [_vm._v("\n            " + _vm._s(post.title) + " | " + _vm._s(post.user.name) + " | " + _vm._s(post.post_date) + "\n        ")]);
   }), 0)]);
 };
 
