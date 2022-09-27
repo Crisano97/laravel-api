@@ -6,7 +6,7 @@
         <div class="col-6">
             <div class="card text-center ">
                 <div>
-                    @if (filter_var($post->post_image, FILTER_VALIDATE_URL))
+                    @if (substr($post->post_image, 0, 4) === 'http')
                         <img src="{{ $post->post_image }}" class="card-img-top" alt="{{ $post->title }}">                    
                     @else
                         <img src="{{ asset('storage/' . $post->post_image) }}" class="card-img-top" alt="">

@@ -16,11 +16,17 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::with('user')->paginate(25);
+        foreach ($posts as $post) {
+            if (substr($post->post_image, 0, 4) != 'http') {
+                $post->post_image = '/storage/' . $post->post_image;
+            }
+        }
         return response()->json([
             'response' => true,
             // 'count' => count($posts),
             'results' => $posts
         ]);
+        
     }
 
     /**
