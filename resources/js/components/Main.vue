@@ -1,18 +1,23 @@
 <template>
-    <div>
-        <ul>
-            <li v-for="post in posts" :key="post.id">
-                {{ post.title }} | {{ post.user.name }} | {{ post.post_date }}
-            </li>
-        </ul>
-    </div>
+    <main class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="posts">
+                    <PostCard v-for="post in posts" :key="post.id" :post="post"/>
+                </div>
+            </div>
+        </div>
+    </main>
 </template>
 
 <script>
+import PostCard from './PostCard.vue'
 import axios from 'axios';
 
 export default {
-    posts: ['posts'],
+    components: {
+        PostCard,
+    },
     data: function(){
         return{
             posts: [],
