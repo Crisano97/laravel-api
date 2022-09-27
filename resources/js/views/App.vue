@@ -1,12 +1,23 @@
 <template>
     <div>
-        <h1>work in progress</h1>
+        <ul>
+            <li></li>
+        </ul>
     </div>
 </template>
 
 <script>
+import axios from 'axios';
 export default {
+    methods: {
+        getPosts(){
+            console.warn('hello world');
+        }
+    },
 
+    created(){
+        this.getPosts();
+    }
 }
 </script>
 
