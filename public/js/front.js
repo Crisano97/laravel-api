@@ -1955,7 +1955,24 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['post']
+  data: function data() {
+    return {
+      click: false,
+      categoryClicked: ''
+    };
+  },
+  props: ['post'],
+  methods: {
+    toggle: function toggle(index) {
+      this.categoryClicked = index;
+
+      if (this.click === false) {
+        this.click = true;
+      } else {
+        this.click = false;
+      }
+    }
+  }
 });
 
 /***/ }),
@@ -2045,16 +2062,22 @@ var render = function render() {
     staticClass: "card-subtitle m-3 text-secondary"
   }, [_vm._v("\n            " + _vm._s(_vm.post.user.name) + " | " + _vm._s(_vm.post.post_date) + "\n        ")]), _vm._v(" "), _vm.post.category != null ? _c("div", {
     staticClass: "badge text-white p-2 m-3 category-hover",
-    style: "background-color:" + _vm.post.category.color
-  }, [_vm._v("\n            " + _vm._s(_vm.post.category.name) + "\n\n            "), _c("div", {
-    staticClass: "relative-posts text-dark"
+    style: "background-color:" + _vm.post.category.color,
+    on: {
+      click: function click($event) {
+        return _vm.toggle(_vm.post.category.id);
+      }
+    }
+  }, [_vm._v("\n            " + _vm._s(_vm.post.category.name) + "\n\n            "), _vm.post.category.id === _vm.categoryClicked ? _c("div", {
+    staticClass: "relative-posts text-dark",
+    "class": _vm.click === true ? "d-block" : "d-none"
   }, [_c("ul", {
     staticClass: "mr-2 post-continer text-left"
   }, _vm._l(_vm.post.category.posts, function (post) {
     return _c("li", {
       key: post.id
     }, [_vm._v(" \n                        " + _vm._s(post.title) + " \n                    ")]);
-  }), 0)])]) : _vm._e(), _vm._v(" "), _vm._l(_vm.post.tags, function (tag) {
+  }), 0)]) : _vm._e()]) : _vm._e(), _vm._v(" "), _vm._l(_vm.post.tags, function (tag) {
     return _c("span", {
       key: tag.id,
       staticClass: "d-inline-block mr-2"
@@ -2112,7 +2135,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "div.category-hover[data-v-1324358a] {\n  font-size: 1.5rem;\n}\ndiv.category-hover div.relative-posts[data-v-1324358a] {\n  display: none;\n}\ndiv.category-hover:hover div.relative-posts[data-v-1324358a] {\n  display: block;\n  width: -webkit-fit-content;\n  width: -moz-fit-content;\n  width: fit-content;\n  height: -webkit-fit-content;\n  height: -moz-fit-content;\n  height: fit-content;\n  border: 1px solid black;\n  position: absolute;\n  background-color: white;\n}", ""]);
+exports.push([module.i, "div.category-hover[data-v-1324358a] {\n  font-size: 1.5rem;\n}\ndiv.category-hover div.relative-posts[data-v-1324358a] {\n  width: -webkit-fit-content;\n  width: -moz-fit-content;\n  width: fit-content;\n  height: -webkit-fit-content;\n  height: -moz-fit-content;\n  height: fit-content;\n  border: 1px solid black;\n  position: absolute;\n  background-color: white;\n}", ""]);
 
 // exports
 
