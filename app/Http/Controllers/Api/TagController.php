@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Post;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
-class PostController extends Controller
+class TagController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,18 +15,11 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::with('user', 'category', 'tags')->paginate(25);
-        foreach ($posts as $post) {
-            if (substr($post->post_image, 0, 4) != 'http') {
-                $post->post_image = '/storage/' . $post->post_image;
-            }
-        }
+        $tags = Tag::with('posts')->paginate(5);
         return response()->json([
             'response' => true,
-            // 'count' => count($posts),
-            'results' => $posts
+            'results' => $tags
         ]);
-        
     }
 
     /**
@@ -58,17 +51,11 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        // $post = Post::findOrFail($id);
-        // return response()->json([
-        //     'response' => true,
-        //     'results' =>['data' => $post]
-        // ]);
-
-        $post = Post::with('category')->find($id);
-        if ($post) {
+        $tag = Tag::with('category')->find($id);
+        if ($tag) {
             return response()->json([
                 'response' => true,
-                'results' => $post
+                'results' => $tag
             ]);
         }
         else return response('', 404);
@@ -105,7 +92,6 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        Post::destroy($id);
-        return response('', 204);
+        //
     }
 }
