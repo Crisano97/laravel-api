@@ -7,11 +7,11 @@
             <h6 class="card-subtitle m-3 text-secondary">
                 {{ post.user.name }} | {{ post.post_date }}
             </h6>
-            <span v-if="post.category != null" :style="`background-color:` + post.category.color" class="badge text-white p-2">{{ post.category.name }}</span>
+            <span v-if="post.category != null" :style="`background-color:` + post.category.color" class="badge text-white p-2 m-3">{{ post.category.name }}</span>
             <p class="card-text m-3">
                 {{ post.post_content }}
             </p>
-            <img :src="post.post_image" alt="image">
+            <img :src="post.post_image" class="m-3" alt="image">
         </div>
     </div>
 </template>

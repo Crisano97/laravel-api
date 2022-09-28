@@ -2041,11 +2041,12 @@ var render = function render() {
   }, [_vm._v("\n            " + _vm._s(_vm.post.title) + "\n        ")]), _vm._v(" "), _c("h6", {
     staticClass: "card-subtitle m-3 text-secondary"
   }, [_vm._v("\n            " + _vm._s(_vm.post.user.name) + " | " + _vm._s(_vm.post.post_date) + "\n        ")]), _vm._v(" "), _vm.post.category != null ? _c("span", {
-    staticClass: "badge text-white p-2",
+    staticClass: "badge text-white p-2 m-3",
     style: "background-color:" + _vm.post.category.color
   }, [_vm._v(_vm._s(_vm.post.category.name))]) : _vm._e(), _vm._v(" "), _c("p", {
     staticClass: "card-text m-3"
   }, [_vm._v("\n            " + _vm._s(_vm.post.post_content) + "\n        ")]), _vm._v(" "), _c("img", {
+    staticClass: "m-3",
     attrs: {
       src: _vm.post.post_image,
       alt: "image"
