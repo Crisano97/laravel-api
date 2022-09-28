@@ -2046,10 +2046,10 @@ var render = function render() {
   }, [_vm._v("\n            " + _vm._s(_vm.post.user.name) + " | " + _vm._s(_vm.post.post_date) + "\n        ")]), _vm._v(" "), _vm.post.category != null ? _c("div", {
     staticClass: "badge text-white p-2 m-3 category-hover",
     style: "background-color:" + _vm.post.category.color
-  }, [_vm._v("\n            " + _vm._s(_vm.post.category.name) + "\n            \n            "), _c("div", {
+  }, [_vm._v("\n            " + _vm._s(_vm.post.category.name) + "\n\n            "), _c("div", {
     staticClass: "relative-posts text-dark"
   }, [_c("ul", {
-    staticClass: "mr-2 post-continer"
+    staticClass: "mr-2 post-continer text-left"
   }, _vm._l(_vm.post.category.posts, function (post) {
     return _c("li", {
       key: post.id
@@ -2112,7 +2112,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "div.relative-posts[data-v-1324358a] {\n  display: none;\n}\ndiv.category-hover[data-v-1324358a] {\n  font-size: 1.5rem;\n}\ndiv.category-hover:hover div.relative-posts[data-v-1324358a] {\n  display: block;\n  width: -webkit-fit-content;\n  width: -moz-fit-content;\n  width: fit-content;\n  height: -webkit-fit-content;\n  height: -moz-fit-content;\n  height: fit-content;\n  border: 1px solid black;\n  position: absolute;\n  background-color: white;\n}", ""]);
+exports.push([module.i, "div.category-hover[data-v-1324358a] {\n  font-size: 1.5rem;\n}\ndiv.category-hover div.relative-posts[data-v-1324358a] {\n  display: none;\n}\ndiv.category-hover:hover div.relative-posts[data-v-1324358a] {\n  display: block;\n  width: -webkit-fit-content;\n  width: -moz-fit-content;\n  width: fit-content;\n  height: -webkit-fit-content;\n  height: -moz-fit-content;\n  height: fit-content;\n  border: 1px solid black;\n  position: absolute;\n  background-color: white;\n}", ""]);
 
 // exports
 

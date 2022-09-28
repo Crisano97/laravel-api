@@ -12,9 +12,9 @@
                 :style="`background-color:` + post.category.color" 
                 class="badge text-white p-2 m-3 category-hover">
                 {{ post.category.name }}
-                
+
                 <div class="relative-posts text-dark">
-                    <ul class="mr-2 post-continer">
+                    <ul class="mr-2 post-continer text-left">
                         <li 
                             v-for="post in post.category.posts" 
                             :key="post.id"> 
@@ -41,11 +41,13 @@ export default {
 
 <style lang="scss" scoped>
 
-    div.relative-posts{
-        display: none;
-    }
+    
     div.category-hover{
         font-size: 1.5rem;
+
+        div.relative-posts{
+            display: none;
+        }
 
         &:hover div.relative-posts{
             display: block;
