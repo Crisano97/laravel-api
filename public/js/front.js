@@ -2040,7 +2040,10 @@ var render = function render() {
     staticClass: "card-title m-3 font-weight-bold"
   }, [_vm._v("\n            " + _vm._s(_vm.post.title) + "\n        ")]), _vm._v(" "), _c("h6", {
     staticClass: "card-subtitle m-3 text-secondary"
-  }, [_vm._v("\n            " + _vm._s(_vm.post.user.name) + " | " + _vm._s(_vm.post.post_date) + "\n        ")]), _vm._v(" "), _vm.post.category != null ? _c("span", [_vm._v(_vm._s(_vm.post.category.name))]) : _vm._e(), _vm._v(" "), _c("p", {
+  }, [_vm._v("\n            " + _vm._s(_vm.post.user.name) + " | " + _vm._s(_vm.post.post_date) + "\n        ")]), _vm._v(" "), _vm.post.category != null ? _c("span", {
+    staticClass: "badge text-white p-2",
+    style: "background-color:" + _vm.post.category.color
+  }, [_vm._v(_vm._s(_vm.post.category.name))]) : _vm._e(), _vm._v(" "), _c("p", {
     staticClass: "card-text m-3"
   }, [_vm._v("\n            " + _vm._s(_vm.post.post_content) + "\n        ")]), _vm._v(" "), _c("img", {
     attrs: {

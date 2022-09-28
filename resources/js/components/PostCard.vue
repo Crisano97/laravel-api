@@ -7,7 +7,7 @@
             <h6 class="card-subtitle m-3 text-secondary">
                 {{ post.user.name }} | {{ post.post_date }}
             </h6>
-            <span v-if="post.category != null">{{ post.category.name }}</span>
+            <span v-if="post.category != null" :style="`background-color:` + post.category.color" class="badge text-white p-2">{{ post.category.name }}</span>
             <p class="card-text m-3">
                 {{ post.post_content }}
             </p>
