@@ -21,6 +21,7 @@ export default {
     data: function(){
         return{
             posts: [],
+            categories: [],
         }
     },
     methods: {
@@ -33,7 +34,8 @@ export default {
             }).catch((error) =>{
                 console.error(error.message);
             })
-        }
+        },
+        
     },
 
     created(){

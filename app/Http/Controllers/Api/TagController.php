@@ -15,7 +15,7 @@ class TagController extends Controller
      */
     public function index()
     {
-        $tags = Tag::with('posts')->paginate(5);
+        $tags = Tag::with('posts.category')->paginate(5);
         return response()->json([
             'response' => true,
             'results' => $tags
