@@ -8,6 +8,10 @@
                 {{ post.user.name }} | {{ post.post_date }}
             </h6>
             <span v-if="post.category != null" :style="`background-color:` + post.category.color" class="badge text-white p-2 m-3">{{ post.category.name }}</span>
+            
+           
+                <span v-for="tag in post.tags" :key="tag.id" class="d-inline-block mr-2"> #{{ tag.name }}</span>
+            
             <p class="card-text m-3">
                 {{ post.post_content }}
             </p>

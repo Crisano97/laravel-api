@@ -2043,7 +2043,12 @@ var render = function render() {
   }, [_vm._v("\n            " + _vm._s(_vm.post.user.name) + " | " + _vm._s(_vm.post.post_date) + "\n        ")]), _vm._v(" "), _vm.post.category != null ? _c("span", {
     staticClass: "badge text-white p-2 m-3",
     style: "background-color:" + _vm.post.category.color
-  }, [_vm._v(_vm._s(_vm.post.category.name))]) : _vm._e(), _vm._v(" "), _c("p", {
+  }, [_vm._v(_vm._s(_vm.post.category.name))]) : _vm._e(), _vm._v(" "), _vm._l(_vm.post.tags, function (tag) {
+    return _c("span", {
+      key: tag.id,
+      staticClass: "d-inline-block mr-2"
+    }, [_vm._v(" #" + _vm._s(tag.name))]);
+  }), _vm._v(" "), _c("p", {
     staticClass: "card-text m-3"
   }, [_vm._v("\n            " + _vm._s(_vm.post.post_content) + "\n        ")]), _vm._v(" "), _c("img", {
     staticClass: "m-3",
@@ -2051,7 +2056,7 @@ var render = function render() {
       src: _vm.post.post_image,
       alt: "image"
     }
-  })])]);
+  })], 2)]);
 };
 
 var staticRenderFns = [];
